@@ -1,0 +1,274 @@
+{
+  "marés": [
+    {
+      "dia": "2025-09-01",
+      "minima": "04:00",
+      "maxima": "10:55",
+      "horarios_disponiveis": {
+        "inicio": "06:00",
+        "fim": "10:00"
+      }
+    },
+    {
+      "dia": "2025-09-02",
+      "minima": "06:00",
+      "maxima": "12:25",
+      "horarios_disponiveis": {
+        "inicio": "06:00",
+        "fim": "10:00"
+      }
+    },
+    {
+      "dia": "2025-09-03",
+      "minima": "07:06",
+      "maxima": "13:23",
+      "horarios_disponiveis": {
+        "inicio": "07:00",
+        "fim": "11:00"
+      }
+    },
+    {
+      "dia": "2025-09-04",
+      "minima": "07:56",
+      "maxima": "14:04",
+      "horarios_disponiveis": {
+        "inicio": "08:00",
+        "fim": "12:00"
+      }
+    },
+    {
+      "dia": "2025-09-05",
+      "minima": "08:30",
+      "maxima": "14:42",
+      "horarios_disponiveis": {
+        "inicio": "08:00",
+        "fim": "12:00"
+      }
+    },
+    {
+      "dia": "2025-09-06",
+      "minima": "09:00",
+      "maxima": "15:14",
+      "horarios_disponiveis": {
+        "inicio": "09:00",
+        "fim": "13:00"
+      }
+    },
+    {
+      "dia": "2025-09-07",
+      "minima": "09:30",
+      "maxima": "15:51",
+      "horarios_disponiveis": {
+        "inicio": "09:00",
+        "fim": "13:00"
+      }
+    },
+    {
+      "dia": "2025-09-08",
+      "minima": "10:00",
+      "maxima": "16:27",
+      "horarios_disponiveis": {
+        "inicio": "10:00",
+        "fim": "14:00"
+      }
+    },
+    {
+      "dia": "2025-09-09",
+      "minima": "11:00",
+      "maxima": "17:04",
+      "horarios_disponiveis": {
+        "inicio": "10:00",
+        "fim": "14:00"
+      }
+    },
+    {
+      "dia": "2025-09-10",
+      "minima": "11:30",
+      "maxima": "17:46",
+      "horarios_disponiveis": {
+        "inicio": "11:00",
+        "fim": "15:00"
+      }
+    },
+    {
+      "dia": "2025-09-11",
+      "minima": "12:00",
+      "maxima": "18:29",
+      "horarios_disponiveis": {
+        "inicio": "12:00",
+        "fim": "16:00"
+      }
+    },
+    {
+      "dia": "2025-09-12",
+      "minima": "13:00",
+      "maxima": "19:17",
+      "horarios_disponiveis": {
+        "inicio": "13:00",
+        "fim": "17:00"
+      }
+    },
+    {
+      "dia": "2025-09-13",
+      "minima": "14:00",
+      "maxima": "20:19",
+      "horarios_disponiveis": {
+        "inicio": "14:00",
+        "fim": "18:00"
+      }
+    },
+    {
+      "dia": "2025-09-14",
+      "minima": "15:30",
+      "maxima": "21:46",
+      "horarios_disponiveis": {
+        "inicio": "15:00",
+        "fim": "19:00"
+      }
+    },
+    {
+      "dia": "2025-09-15",
+      "minima": "17:00",
+      "maxima": "22:32",
+      "horarios_disponiveis": {
+        "inicio": "16:00",
+        "fim": "20:00"
+      }
+    },
+    {
+      "dia": "2025-09-16",
+      "minima": "18:00",
+      "maxima": "23:10",
+      "horarios_disponiveis": {
+        "inicio": "17:00",
+        "fim": "21:00"
+      }
+    },
+    {
+      "dia": "2025-09-17",
+      "minima": "07:00",
+      "maxima": "13:31",
+      "horarios_disponiveis": {
+        "inicio": "07:00",
+        "fim": "11:00"
+      }
+    },
+    {
+      "dia": "2025-09-18",
+      "minima": "08:00",
+      "maxima": "14:10",
+      "horarios_disponiveis": {
+        "inicio": "08:00",
+        "fim": "12:00"
+      }
+    },
+    {
+      "dia": "2025-09-19",
+      "minima": "08:30",
+      "maxima": "14:44",
+      "horarios_disponiveis": {
+        "inicio": "08:00",
+        "fim": "12:00"
+      }
+    },
+    {
+      "dia": "2025-09-20",
+      "minima": "09:00",
+      "maxima": "15:12",
+      "horarios_disponiveis": {
+        "inicio": "09:00",
+        "fim": "13:00"
+      }
+    },
+    {
+      "dia": "2025-09-21",
+      "minima": "09:30",
+      "maxima": "15:42",
+      "horarios_disponiveis": {
+        "inicio": "09:00",
+        "fim": "13:00"
+      }
+    },
+    {
+      "dia": "2025-09-22",
+      "minima": "10:00",
+      "maxima": "16:08",
+      "horarios_disponiveis": {
+        "inicio": "10:00",
+        "fim": "14:00"
+      }
+    },
+    {
+      "dia": "2025-09-23",
+      "minima": "10:30",
+      "maxima": "16:38",
+      "horarios_disponiveis": {
+        "inicio": "10:00",
+        "fim": "14:00"
+      }
+    },
+    {
+      "dia": "2025-09-24",
+      "minima": "11:00",
+      "maxima": "17:06",
+      "horarios_disponiveis": {
+        "inicio": "11:00",
+        "fim": "15:00"
+      }
+    },
+    {
+      "dia": "2025-09-25",
+      "minima": "11:30",
+      "maxima": "17:38",
+      "horarios_disponiveis": {
+        "inicio": "11:00",
+        "fim": "15:00"
+      }
+    },
+    {
+      "dia": "2025-09-26",
+      "minima": "12:00",
+      "maxima": "18:10",
+      "horarios_disponiveis": {
+        "inicio": "12:00",
+        "fim": "16:00"
+      }
+    },
+    {
+      "dia": "2025-09-27",
+      "minima": "12:30",
+      "maxima": "18:51",
+      "horarios_disponiveis": {
+        "inicio": "12:00",
+        "fim": "16:00"
+      }
+    },
+    {
+      "dia": "2025-09-28",
+      "minima": "13:00",
+      "maxima": "19:42",
+      "horarios_disponiveis": {
+        "inicio": "13:00",
+        "fim": "17:00"
+      }
+    },
+    {
+      "dia": "2025-09-29",
+      "minima": "14:30",
+      "maxima": "20:57",
+      "horarios_disponiveis": {
+        "inicio": "14:00",
+        "fim": "17:00"
+      }
+    },
+    {
+      "dia": "2025-09-30",
+      "minima": "15:30",
+      "maxima": "21:46",
+      "horarios_disponiveis": {
+        "inicio": "15:00",
+        "fim": "17:00"
+           }
+    }
+  ]
+}

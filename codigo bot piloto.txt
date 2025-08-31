@@ -1,0 +1,193 @@
+const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
+const qrcode = require('qrcode-terminal');
+const fs = require('fs');
+
+// Criação do cliente do WhatsApp
+const client = new Client({
+  authStrategy: new LocalAuth(), // Sessão local
+});
+
+// Gerar o QR Code para autenticação
+client.on('qr', (qr) => {
+  qrcode.generate(qr, { small: true });
+  console.log('Escaneie o QR Code com seu WhatsApp!');
+});
+
+// Quando o bot estiver pronto
+client.on('ready', () => {
+  console.log('Bot está pronto!✅');
+});
+
+// Função para enviar imagens da tabela de valores
+const enviarTabelaDeValores = async (message) => {
+  try {
+    const imagens = [
+      './tabela_valores.jpg',
+      './tabela_valores2.jpg',
+      './tabela_valores3.jpg',
+      './tabela_valores4.jpg'
+    ];
+
+    await message.reply('Aqui está a tabela de valores dos mergulhos 😁⬇:');
+
+    for (const imagemPath of imagens) {
+      if (fs.existsSync(imagemPath)) {
+        const media = new MessageMedia(
+          'image/jpeg',
+          fs.readFileSync(imagemPath).toString('base64'),
+          imagemPath.split('/').pop()
+        );
+        await message.reply(media);
+      } else {
+        console.warn(`Imagem não encontrada: ${imagemPath}`);
+      }
+    }
+  } catch (err) {
+    console.error('Erro ao enviar tabela:', err);
+    await message.reply('Ocorreu um erro ao enviar a tabela de valores.');
+  }
+};
+
+// Função para enviar prazo de entrega
+const enviarPrazoDeEntrega = async (message) => {
+  try {
+    await message.reply(`Temos um prazo rápido para envio de suas fotos!
+Em até 24 horas serão todas enviadas. 💙`);
+  } catch (err) {
+    console.error('Erro ao enviar prazo de entrega:', err);
+  }
+};
+
+// Função para enviar agradecimento
+const enviarAgradecimento = async (message) => {
+  try {
+    await message.reply('De nada! Ficamos feliz em ajudar. Se precisar de mais informações, é só chamar! 😊');
+  } catch (err) {
+    console.error('Erro ao enviar agradecimento:', err);
+  }
+};
+
+// Função para informações sobre o curso de mergulho
+const enviarCursoDeMergulho = async (message) => {
+  try {
+    await message.reply('Obrigado pelo interesse! Em breve, eu mesmo entrarei em contato com mais detalhes sobre o curso de mergulho. Fique ligado!');
+  } catch (err) {
+    console.error('Erro ao enviar informações sobre curso de mergulho:', err);
+  }
+};
+
+// Função para informações sobre passeio de lancha
+const enviarPasseioDeLancha = async (message) => {
+  try {
+    await message.reply('Sobre informações do passeio de lancha, vou encaminhar o contato do responsável diretamente para ter informações mais precisas!😃  +5581999163732');
+  } catch (err) {
+    console.error('Erro ao enviar informações sobre passeio de lancha:', err);
+  }
+};
+
+// Função para resposta de agendamento
+const responderAgendamento = async (message) => {
+  try {
+    await message.reply('Em breve estaremos finalizando o agendamento do seu mergulho! 😎🤿 Fique atento que entraremos em contato em breve para confirmar os detalhes!');
+  } catch (err) {
+    console.error('Erro ao responder agendamento:', err);
+  }
+};
+
+// Escuta mensagens recebidas
+client.on('message', async (message) => {
+  const mensagem = message.body.toLowerCase();
+
+  // Saudação automática
+  if (
+    mensagem.includes('olá') ||
+    mensagem.includes('oi') ||
+    mensagem.includes('bom dia') ||
+    mensagem.includes('boa tarde') ||
+    mensagem.includes('boa noite') ||
+    mensagem.includes('hola') ||
+    mensagem.includes('hi') ||
+    mensagem.includes('hello') ||
+    mensagem.includes('hey')
+  ) {
+    await message.reply(`Olá, bem-vindo à Deep Dive! 🌊
+Agradecemos seu contato. Conheça nossas modalidades de mergulho, fale com a gente e explore um novo mundo debaixo da água! 🤿✨`);
+  }
+
+  // Solicitação de tabela de valores
+  else if (
+    mensagem.includes('tabela de valores') ||
+    mensagem.includes('preços') ||
+    mensagem.includes('preço') ||
+    mensagem.includes('quais são os valores') ||
+    mensagem.includes('valor do mergulho') ||
+    mensagem.includes('quanto custa o mergulho')
+  ) {
+    await enviarTabelaDeValores(message);
+  }
+
+  // Solicitação de prazo de entrega
+  else if (
+    mensagem.includes('prazo de entrega') ||
+    mensagem.includes('quando ficam prontas as fotos') ||
+    mensagem.includes('quando vou receber as fotos') ||
+    mensagem.includes('Gostaria de solicitar minhas fotos') ||
+    mensagem.includes('fotos') ||
+    mensagem.includes('pulseiras') ||
+    mensagem.includes('cd minhas fotos') ||
+    mensagem.includes('solicitando') ||
+    mensagem.includes('pulseira')
+  ) {
+    await enviarPrazoDeEntrega(message);
+  }
+
+  // Agradecimento
+  else if (
+    mensagem.includes('obrigado') ||
+    mensagem.includes('valeu') ||
+    mensagem.includes('agradeço') ||
+    mensagem.includes('gracias') ||
+    mensagem.includes('thanks') ||
+    mensagem.includes('obg') ||
+    mensagem.includes('gratidão') ||
+    mensagem.includes('thank you')
+  ) {
+    await enviarAgradecimento(message);
+  }
+
+  // Solicitação de informações sobre o curso de mergulho
+  else if (
+    mensagem.includes('curso de mergulho') ||
+    mensagem.includes('curso de mergulho')
+  ) {
+    await enviarCursoDeMergulho(message);
+  }
+
+  // Solicitação de informações sobre o passeio de lancha
+  else if (
+    mensagem.includes('passeio de lancha') ||
+    mensagem.includes('passeio de barco') ||
+    mensagem.includes('lancha')
+  ) {
+    await enviarPasseioDeLancha(message);
+  }
+
+  // Agendamento de mergulho
+  else if (
+    mensagem.includes('agendar mergulho') ||
+    mensagem.includes('quero agendar um mergulho') ||
+    mensagem.includes('agendar') ||
+    mensagem.includes('eu quero agendar um mergulho') ||
+    mensagem.includes('horário de mergulho')
+  ) {
+    await responderAgendamento(message);
+  }
+
+  // Resposta padrão
+  else {
+    await message.reply('Para uma melhor solução do seu problema, em breve iremos entrar em contato! 😁');
+  }
+});
+
+// Inicia o bot
+client.initialize();

